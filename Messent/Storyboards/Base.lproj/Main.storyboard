@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UMT-7w-4AA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messent-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Messent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DOe-ON-MKG">
+                                <rect key="frame" x="20" y="160" width="374" height="190"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEX-2H-9f4" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xma-5g-3qk">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Paste from keyboard"/>
+                                        <connections>
+                                            <action selector="pasteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hw5-7n-Pcc"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDT-jC-Nsf">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJR-u4-jlD">
+                                                <rect key="frame" x="104" y="0.0" width="166" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Open on WhatsApp" buttonSize="large"/>
+                                                <connections>
+                                                    <action selector="sendButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQx-8N-yB3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="UJR-u4-jlD" firstAttribute="top" secondItem="bDT-jC-Nsf" secondAttribute="top" id="1R1-fR-JAT"/>
+                                            <constraint firstAttribute="bottom" secondItem="UJR-u4-jlD" secondAttribute="bottom" id="RWQ-3N-L6z"/>
+                                            <constraint firstItem="UJR-u4-jlD" firstAttribute="centerX" secondItem="bDT-jC-Nsf" secondAttribute="centerX" id="did-lr-Og8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DOe-ON-MKG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3w2-6F-bNh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DOe-ON-MKG" secondAttribute="trailing" constant="20" id="ZFF-ty-3Dt"/>
+                            <constraint firstItem="DOe-ON-MKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aJZ-dj-ck5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Messent" id="ty1-9G-QcF"/>
+                    <connections>
+                        <outlet property="pasteButton" destination="xma-5g-3qk" id="aOx-n1-xh3"/>
+                        <outlet property="phoneTextField" destination="eEX-2H-9f4" id="BFf-qH-2aO"/>
+                        <outlet property="sendButton" destination="UJR-u4-jlD" id="cgU-MH-hfT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hhO-jR-g3p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UMT-7w-4AA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BwZ-hN-kid">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="23F-co-Qu4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-It-9uX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
